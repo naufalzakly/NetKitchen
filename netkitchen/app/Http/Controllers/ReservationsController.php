@@ -11,7 +11,7 @@ class ReservationsController extends Controller
     public function index()
    {
     $reservations = Reservations::get();
-    return view ('reservations.index', ['reservations' => $reservations]);
+    return view ('admin.reservations.index', ['reservations' => $reservations]);
    }
 
    public function tambah()
@@ -33,7 +33,7 @@ class ReservationsController extends Controller
   public function edit($id)
   {
     $reservations = Reservations::where('id', $id)->first();
-    return view ('reservations.form',['reservations'=>$reservations]);
+    return view ('admin.reservations.form',['reservations'=>$reservations]);
   }
 
   public function update($id, Request $request)

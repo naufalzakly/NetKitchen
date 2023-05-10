@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 @section('title', 'Form Meja')
 
 section('contents')
-    <form action="{{ isset($reservations) ? route('reservations.update', $reservations->id) : route('reservations.simpan') }}" method="post">
+    <form action="{{ isset($reservations) ? route('admin.reservations.update', $reservations->id) : route('admin.reservations.simpan') }}" method="post">
         @csrf
         <div class="row">
             <div class="col-12">

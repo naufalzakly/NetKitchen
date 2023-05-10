@@ -12,7 +12,16 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-
+    <li class="nav-item ">
+        <a class="nav-link" href="{{ route('dashboard') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span></a>
+    </li>
+    <li class="nav-item ">
+        <a class="nav-link" href="{{ route('admin.foods') }}">
+            <i class="fa-solid fa-utensils" style"=color: #7c97e4;"></i>
+            <span>Makanan</span></a>
+    </li>
     <li class="nav-item ">
         <a class="nav-link" href="{{ route('admin.reservations') }}">
             <i class="fa-solid fa-envelope"></i>
