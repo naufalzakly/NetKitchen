@@ -2,7 +2,7 @@
 @section('title', 'Form Makanan')
 
 @section('contents')
-    <form action="{{ isset($foods) ? route('foods.update', $foods->id) : route('foods.simpan') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ isset($foods) ? route('admin.foods.update', $foods->id) : route('admin.foods.simpan') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-12">

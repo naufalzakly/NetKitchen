@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 use App\Models\Products;
@@ -15,8 +16,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Products::all();
-        return view('home', compact('products'));
+        $products = Product::all();
+        return view('fe_layout.app', compact('products'));
 
     }
 
@@ -27,7 +28,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('product.create');
+        return view('fe_layout.app.create');
     }
 
     /**
@@ -39,8 +40,8 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $product = Products::create($data);
-        return redirect()->route('home');
+        $product = Product::create($data);
+        return redirect()->route('fe_layout.app');
 
     }
 
@@ -63,8 +64,8 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $product = Products::find($id);
-        return view('product.update', compact('product'));
+        $product = Product::find($id);
+        return view('fe_layout.app.update', compact('product'));
 
     }
 
@@ -77,12 +78,12 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $product = Products::find($id);
+        $product = Product::find($id);
         $product->name = $request->name;
         $product->price = $request->price;
         $product->stocks = $request->stocks;
         $product->save();
-        return redirect()->route('product.index');
+        return redirect()->route('fe_layout.app');
     }
 
     /**
@@ -93,8 +94,8 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        $product = Products::find($id);
+        $product = Product::find($id);
         $product->delete();
-        return redirect()->route('home');    }
+        return redirect()->route('fe_layout.app');    }
 
 }

@@ -16,7 +16,7 @@ class ReservationsController extends Controller
 
    public function tambah()
    {
-    return view ('reservations.form');
+    return view ('admin.reservations.form');
    }
 
    public function simpan(Request $request)
@@ -27,7 +27,7 @@ class ReservationsController extends Controller
         'stok' => $request->stok,
     ];
     Reservations::create($data);
-    return redirect()->route('reservations');
+    return redirect()->route('admin.reservations');
    }
 
   public function edit($id)
@@ -46,13 +46,13 @@ class ReservationsController extends Controller
     ];
     
     Reservations::find($id)->update($data);
-    return redirect()->route('reservations');
+    return redirect()->route('admin.reservations');
   }
 
   public function hapus($id)
   {
     Reservations::find($id)->delete();
 
-    return redirect()->route('reservations');
+    return redirect()->route('admin.reservations');
   }
 }

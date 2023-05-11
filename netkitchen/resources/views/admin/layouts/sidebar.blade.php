@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.index') }}">
         <div class="sidebar-brand-icon">
             <i class="fa-solid fa-shop"></i>
         </div>
@@ -12,7 +12,11 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-
+    <li class="nav-item ">
+        <a class="nav-link" href="{{ route('admin.foods') }}">
+            <i class="fa-solid fa-utensils" style"=color: #7c97e4;"></i>
+            <span>Makanan</span></a>
+    </li>
     <li class="nav-item ">
         <a class="nav-link" href="{{ route('admin.reservations') }}">
             <i class="fa-solid fa-envelope"></i>

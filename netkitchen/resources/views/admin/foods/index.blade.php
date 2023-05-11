@@ -6,7 +6,7 @@
         <h6 class="m-0 font-weight-bold text-primary">Data Makanan</h6>
     </div>
     <div class="card-body">
-        <a href="{{ route('foods.tambah') }}" class="btn btn-primary mb-3" >Tambah Makanan</a>
+        <a href="{{ route('admin.foods.tambah') }}" class="btn btn-primary mb-3" >Tambah Makanan</a>
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -42,8 +42,8 @@
                             <td>{{ $row->harga}}</td>
 
                             <td>
-                                <a href="{{ route('foods.edit', $row->id) }}" class="btn btn-warning">Edit</a>
-                                <a href="{{ route('foods.hapus', $row->id) }}" class="btn btn-danger">Hapus</a>
+                                <a href="{{ route('admin.foods.edit', $row->id) }}" class="btn btn-warning">Edit</a>
+                                <a href="{{ route('admin.foods.hapus', $row->id) }}" class="btn btn-danger">Hapus</a>
                             </td>
 
                         </tr>
