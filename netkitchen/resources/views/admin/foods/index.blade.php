@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 @section('title', 'Data Makanan')
 @section('contents')
 <div class="card shadow mb-4">
@@ -33,9 +33,9 @@
                                 @else
                                     <p class="text-info">tidak ada foto</p>
                                 @endif
-        
+
                             </td>
-        
+
                             <td>{{ $row->nama_makanan }}</td>
                             <td>{{ $row->kategori_makanan }}</td>
                             <td>{{ $row->stok }}</td>

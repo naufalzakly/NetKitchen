@@ -10,6 +10,7 @@ class Role extends Model
     use HasFactory;
     protected $table = 'roles';
     protected $guarded = ['id'];
+
     public function fkUserRole(){
         return $this->hasMany(UserRole::class,'role_id','id');
     }

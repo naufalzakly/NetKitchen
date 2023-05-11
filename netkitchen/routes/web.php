@@ -23,14 +23,17 @@ use App\Models\Products;
 //     return view('fe_layout/app');
 // });
 
+Route::get('/admin-dashboard', function () {
+    return view('admin.dashboard.index');
+})->name('admin.index');
 
+// Route::get('/home', function () {
+//     return view('admin.dashboard.index');
+// })->name('dashboard.index');
 
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-})->name('dashboard.index');
 
 Route::middleware(EnsureAuthCustomer::class)->group(function(){
     Route::prefix('customer')->name('customer.')->group(function(){

@@ -31,12 +31,13 @@ class HomeController extends Controller
         $role = $user->userRole->role->name;
 
         if ($role == 'superadmin') {
-            return view('admin.index');
+            return view('admin.dashboard.index');
         }else {
-            return view('fe_layout.app');
+            $products = Product::all();
+            return view('fe_layout.app', compact('products'));
         }
-        
+
     }
 
-    
+
 }
